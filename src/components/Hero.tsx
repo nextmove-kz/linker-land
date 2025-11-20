@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Contact from "./Contact";
 
 const Hero = () => {
   return (
@@ -26,9 +27,13 @@ const Hero = () => {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8">
-              Get Started →
-            </Button>
+            <Contact 
+              trigger={
+                <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8">
+                  Get Started →
+                </Button>
+              }
+            />
             <p className="text-sm text-muted-foreground self-center">
               Book your free discovery call
             </p>

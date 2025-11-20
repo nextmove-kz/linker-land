@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Layers } from "lucide-react";
+import Contact from "./Contact";
 
 const Navigation = () => {
   const scrollToSection = (id: string) => {
@@ -51,9 +52,13 @@ const Navigation = () => {
             </button>
           </div>
 
-          <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
-            Get Started →
-          </Button>
+          <Contact 
+            trigger={
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+                Get Started →
+              </Button>
+            }
+          />
         </div>
       </div>
     </nav>
