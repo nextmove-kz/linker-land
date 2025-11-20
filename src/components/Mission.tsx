@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Contact from "./Contact";
+import teamImage from "@/assets/team-collaboration.jpg";
 
 const Mission = () => {
   return (
@@ -19,7 +20,11 @@ const Mission = () => {
           {/* Right Column - Image with Overlapping Card */}
           <div className="relative">
             <div className="aspect-[4/5] bg-muted rounded-sm overflow-hidden">
-              <div className="w-full h-full bg-gradient-to-br from-muted to-muted-foreground/20" />
+              <img 
+                src={teamImage} 
+                alt="Professional development team collaborating" 
+                className="w-full h-full object-cover"
+              />
             </div>
             
             {/* Overlapping Card */}
