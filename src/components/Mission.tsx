@@ -17,7 +17,7 @@ const Mission = () => {
             </h2>
 
             {/* Overlapping Card */}
-            <div className="bg-background p-6 md:p-8 rounded-sm shadow-[0_4px_12px_rgba(0,0,0,0.08),0_8px_24px_rgba(0,0,0,0.12),0_16px_32px_rgba(0,0,0,0.08)] mt-8 relative md:absolute md:-right-32 md:top-auto md:w-[calc(100%+12rem)] z-10">
+            <div className="bg-background p-6 md:p-8 rounded-sm shadow-[0_0_0_1px_rgba(0,0,0,0.05),0_0_16px_rgba(0,0,0,0.1)] mt-8 relative md:absolute md:-right-32 md:top-auto md:w-[calc(100%+12rem)] z-10">
               <h3 className="text-2xl md:text-4xl font-light text-muted-foreground italic mb-6">
                 Now it's your turn.
               </h3>
