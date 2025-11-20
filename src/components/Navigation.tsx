@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Layers } from "lucide-react";
+import logo from "@/assets/logo.png";
 import Contact from "./Contact";
 const Navigation = () => {
   const scrollToSection = (id: string) => {
@@ -14,7 +14,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <Layers className="h-6 w-6" />
+            <img src={logo} alt="linker.kz logo" className="h-8 w-8" />
             <span className="text-xl font-bold">linker.kz</span>
           </div>
           
