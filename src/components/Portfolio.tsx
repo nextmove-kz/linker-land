@@ -24,7 +24,7 @@ const Portfolio = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-20 px-6 bg-muted/30">
+    <section id="portfolio" className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16">
           <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-4">
@@ -56,7 +56,7 @@ const Portfolio = () => {
                 {project.tags.map((tag, tagIndex) => (
                   <span 
                     key={tagIndex}
-                    className="text-xs px-3 py-1 bg-muted text-muted-foreground rounded-full"
+                    className="text-xs px-3 py-1 bg-accent text-accent-foreground rounded-full"
                   >
                     {tag}
                   </span>
