@@ -25,13 +25,12 @@ const Navigation = () => {
             <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
               What we do
             </button>
-            <button onClick={() => scrollToSection('what-you-get')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
-              What you get
+            <button onClick={() => scrollToSection('portfolio')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
+              Portfolio
             </button>
-            <button onClick={() => scrollToSection('mission')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
-              Our Mission
+            <button onClick={() => scrollToSection('reviews')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
+              Reviews
             </button>
-            
           </div>
 
           <Contact trigger={<Button className="bg-primary text-primary-foreground hover:bg-primary/90">
