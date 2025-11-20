@@ -31,7 +31,7 @@ const Mission = () => {
 
               <Contact 
                 trigger={
-                  <Button size="lg" className="bg-foreground text-background hover:bg-foreground/90 w-full md:w-auto">
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full md:w-auto">
                     Get Started →
                   </Button>
                 }
