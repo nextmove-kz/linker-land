@@ -21,7 +21,7 @@ const Reviews = () => {
   ];
 
   return (
-    <section id="reviews" className="py-20 px-6 bg-accent text-accent-foreground">
+    <section id="reviews" className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-16 text-center">
           <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-4">
@@ -34,7 +34,7 @@ const Reviews = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-background text-foreground p-8 rounded-sm">
+            <div key={index} className="bg-muted p-8 rounded-sm">
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <svg
