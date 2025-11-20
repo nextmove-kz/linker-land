@@ -6,7 +6,7 @@ const Mission = () => {
   return (
     <section id="mission" className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid md:grid-cols-[7fr_3fr] gap-12 items-start">
+        <div className="grid md:grid-cols-[6fr_4fr] gap-12 items-start">
           {/* Left Column */}
           <div className="space-y-6 pt-8">
             <p className="text-sm font-medium text-muted-foreground uppercase tracking-wide">
