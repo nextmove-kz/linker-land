@@ -2,10 +2,16 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { Mail, MessageCircle, Phone } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
-const Contact = () => {
+interface ContactProps {
+  trigger?: React.ReactNode;
+}
+
+const Contact = ({ trigger }: ContactProps) => {
+  const [open, setOpen] = useState(false);
   const [contactMethod, setContactMethod] = useState("email");
   const [contactInfo, setContactInfo] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -36,6 +42,7 @@ const Contact = () => {
       });
       setContactInfo("");
       setIsSubmitting(false);
+      setOpen(false);
     }, 1000);
   };
 
@@ -52,82 +59,72 @@ const Contact = () => {
     }
   };
 
+  const contactMethods = [
+    { value: "email", label: "Email", icon: Mail },
+    { value: "telegram", label: "Telegram", icon: MessageCircle },
+    { value: "whatsapp", label: "WhatsApp", icon: Phone },
+    { value: "other", label: "Other", icon: MessageCircle },
+  ];
+
   return (
-    <section id="contact" className="py-20 px-6 bg-background">
-      <div className="container mx-auto max-w-2xl">
-        <div className="space-y-8">
-          <div className="space-y-4 text-center">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              Let's work together
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Tell us how to reach you, and we'll start the conversation.
-            </p>
+    <Dialog open={open} onOpenChange={setOpen}>
+      {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
+      <DialogContent className="sm:max-w-md">
+        <DialogHeader>
+          <DialogTitle className="text-2xl">Let's work together</DialogTitle>
+          <DialogDescription>
+            Tell us how to reach you, and we'll start the conversation.
+          </DialogDescription>
+        </DialogHeader>
+
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="space-y-3">
+            <Label className="text-sm font-medium">
+              How should we contact you?
+            </Label>
+            <div className="grid grid-cols-2 gap-2">
+              {contactMethods.map(({ value, label, icon: Icon }) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setContactMethod(value)}
+                  className={`flex items-center justify-center gap-2 px-4 py-3 rounded-md border-2 transition-all ${
+                    contactMethod === value
+                      ? "border-primary bg-primary/10 text-primary font-medium"
+                      : "border-border hover:border-muted-foreground/50"
+                  }`}
+                >
+                  <Icon className="h-4 w-4" />
+                  <span className="text-sm">{label}</span>
+                </button>
+              ))}
+            </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-8 bg-accent p-8 md:p-12 rounded-sm">
-            <div className="space-y-4">
-              <Label className="text-base font-medium">
-                How should we contact you?
-              </Label>
-              <RadioGroup
-                value={contactMethod}
-                onValueChange={setContactMethod}
-                className="grid grid-cols-2 gap-4"
-              >
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="email" id="email" />
-                  <Label htmlFor="email" className="cursor-pointer font-normal">
-                    Email
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="telegram" id="telegram" />
-                  <Label htmlFor="telegram" className="cursor-pointer font-normal">
-                    Telegram
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="whatsapp" id="whatsapp" />
-                  <Label htmlFor="whatsapp" className="cursor-pointer font-normal">
-                    WhatsApp
-                  </Label>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <RadioGroupItem value="other" id="other" />
-                  <Label htmlFor="other" className="cursor-pointer font-normal">
-                    Other
-                  </Label>
-                </div>
-              </RadioGroup>
-            </div>
+          <div className="space-y-2">
+            <Label htmlFor="contact-info" className="text-sm font-medium">
+              Your contact info
+            </Label>
+            <Input
+              id="contact-info"
+              type="text"
+              placeholder={getPlaceholder()}
+              value={contactInfo}
+              onChange={(e) => setContactInfo(e.target.value)}
+            />
+          </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="contact-info" className="text-base font-medium">
-                Your contact info
-              </Label>
-              <Input
-                id="contact-info"
-                type="text"
-                placeholder={getPlaceholder()}
-                value={contactInfo}
-                onChange={(e) => setContactInfo(e.target.value)}
-                className="text-base"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              size="lg"
-              className="w-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? "Sending..." : "Get in touch →"}
-            </Button>
-          </form>
-        </div>
-      </div>
-    </section>
+          <Button
+            type="submit"
+            size="lg"
+            className="w-full"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Sending..." : "Get in touch →"}
+          </Button>
+        </form>
+      </DialogContent>
+    </Dialog>
   );
 };
 
