@@ -2,28 +2,28 @@ import { CheckCircle2 } from "lucide-react";
 
 const benefits = [
   {
-    title: "Latest Technology",
-    description: "We build with cutting-edge tools and frameworks that stand the test of time.",
+    title: "Future-Proof Foundation",
+    description: "Your project won't feel outdated in 6 months. We choose proven, modern tools that keep you competitive for years.",
   },
   {
-    title: "Comprehensive Documentation",
-    description: "Every project includes thorough documentation, making onboarding and expansion seamless.",
+    title: "Easy Handoffs",
+    description: "Bringing on new team members or taking over internally? Our clear documentation means no one is left guessing.",
   },
   {
-    title: "Code Quality",
-    description: "Clean, maintainable code that follows industry best practices and standards.",
+    title: "Maintainable from Day One",
+    description: "Need to add features later? Our clean approach means you won't hit walls or need expensive rewrites.",
   },
   {
-    title: "Sustainable Optimization",
-    description: "Performance built to scale without technical debt holding you back.",
+    title: "Scales With Your Growth",
+    description: "Start small, grow big. Performance that handles 100 users today and 100,000 tomorrow.",
   },
   {
-    title: "Built to Expand",
-    description: "Architecture designed for growth - add features confidently without fear.",
+    title: "Built to Evolve",
+    description: "Your needs will change. Our architecture adapts to new features without breaking what already works.",
   },
   {
-    title: "Tools That Help",
-    description: "Instruments and systems that work with you, not against you.",
+    title: "Developer-Friendly Setup",
+    description: "Your future team will thank you. Everything is organized for smooth development, not frustration.",
   },
 ];
 
@@ -39,9 +39,9 @@ const WhatYouGet = () => {
             5+ years.
           </h2>
           <p className="text-lg max-w-2xl text-muted-foreground">
-            We don't just deliver projects — we build sustainable systems with the latest 
-            technology, pristine documentation, and code quality that empowers your team 
-            to expand confidently.
+            Most agencies build for now. We build for the next 5 years. That means your 
+            project stays modern, your team can grow it without roadblocks, and you won't 
+            need costly rebuilds when your business evolves.
           </p>
         </div>
 
