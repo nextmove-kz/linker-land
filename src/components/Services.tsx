@@ -36,11 +36,11 @@ const Services = () => {
           <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
             No more
             <br />
-            technical disasters.
+            guesswork.
           </h2>
           <p className="text-lg max-w-2xl text-muted-foreground">
-            Whether you're bringing a legacy system back to life or starting fresh, 
-            we deliver professional solutions that your team can actually maintain and expand.
+            Leveraging collective expertise, we'll position you as a technical leader
+            while converting your growing audience into tangible results.
           </p>
         </div>
 

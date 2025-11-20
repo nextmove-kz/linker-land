@@ -8,13 +8,13 @@ const Mission = () => {
           <div className="space-y-6">
             <p className="text-sm font-medium text-muted-foreground">Our Mission</p>
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Stop wasting money
+              With our expertise, we've built
               <br />
-              on projects that fail.
+              solutions that scale
               <br />
-              Start building
+              from prototype to
               <br />
-              something real.
+              production.
             </h2>
           </div>
 

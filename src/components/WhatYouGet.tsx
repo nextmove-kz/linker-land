@@ -39,9 +39,9 @@ const WhatYouGet = () => {
             5+ years.
           </h2>
           <p className="text-lg max-w-2xl text-muted-foreground">
-            Unlike the freelancers and AI tools that left you with unmaintainable mess, 
-            we deliver projects built to industry standards. Your next developer will 
-            thank you instead of rebuilding from scratch.
+            We don't just deliver projects — we build sustainable systems with the latest 
+            technology, pristine documentation, and code quality that empowers your team 
+            to expand confidently.
           </p>
         </div>
 

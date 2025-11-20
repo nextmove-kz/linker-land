@@ -6,18 +6,21 @@ const Hero = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="space-y-8">
           <h1 className="text-6xl md:text-8xl font-black leading-tight">
-            Your project
+            Technical
             <br />
-            won't fail
+            <span className="italic font-light">Excellence</span> for
             <br />
-            <span className="italic font-light">this time.</span>
+            <span className="bg-primary text-primary-foreground px-4 inline-block">
+              YOUR IDEAS
+            </span>
           </h1>
           
           <div className="max-w-2xl space-y-4">
             <p className="text-lg text-foreground">
-              Burned by freelancers who disappear? Tired of AI-generated code that breaks?{" "}
+              Give your ideas a proper chance to blossom with our world-class
+              technical team,{" "}
               <span className="font-bold">
-                We build projects that actually work — and keep working for years.
+                bringing expertise from complex backend systems to seamless user experiences.
               </span>
             </p>
           </div>
