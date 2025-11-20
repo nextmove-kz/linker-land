@@ -4,6 +4,7 @@ import About from "@/components/About";
 import Services from "@/components/Services";
 import WhatYouGet from "@/components/WhatYouGet";
 import Mission from "@/components/Mission";
+import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -16,6 +17,7 @@ const Index = () => {
         <Services />
         <WhatYouGet />
         <Mission />
+        <Contact />
       </main>
       <Footer />
     </div>

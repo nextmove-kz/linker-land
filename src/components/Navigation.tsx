@@ -43,6 +43,12 @@ const Navigation = () => {
             >
               Our Mission
             </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="text-sm font-medium hover:text-muted-foreground transition-colors"
+            >
+              Contact
+            </button>
           </div>
 
           <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
