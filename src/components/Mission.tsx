@@ -17,13 +17,13 @@ const Mission = () => {
             </h2>
 
             {/* Overlapping Card */}
-            <div className="bg-background p-8 md:p-12 rounded-sm shadow-2xl mt-12 relative md:absolute md:-right-24 md:top-auto md:w-[calc(100%+8rem)] z-10">
-              <h3 className="text-3xl md:text-5xl font-light text-muted-foreground italic mb-8">
+            <div className="bg-background p-6 md:p-8 rounded-sm shadow-2xl mt-8 relative md:absolute md:-right-16 md:top-auto md:w-[calc(100%+6rem)] z-10">
+              <h3 className="text-2xl md:text-4xl font-light text-muted-foreground italic mb-6">
                 Now it's your turn.
               </h3>
               
-              <div className="space-y-1 mb-8">
-                <p className="text-lg font-bold">Linker Team</p>
+              <div className="space-y-1 mb-6">
+                <p className="text-base font-bold">Linker Team</p>
                 <p className="text-xs text-muted-foreground uppercase tracking-wider">
                   Technical Partners
                 </p>
@@ -36,7 +36,7 @@ const Mission = () => {
                   </Button>
                 }
               />
-              <p className="text-sm text-muted-foreground mt-3">
+              <p className="text-xs text-muted-foreground mt-2">
                 Book your free discovery call
               </p>
             </div>
