@@ -1,17 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { Layers } from "lucide-react";
 import Contact from "./Contact";
-
 const Navigation = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({
+        behavior: 'smooth'
+      });
     }
   };
-
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+  return <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -20,49 +19,26 @@ const Navigation = () => {
           </div>
           
           <div className="hidden md:flex items-center gap-8">
-            <button 
-              onClick={() => scrollToSection('about')}
-              className="text-sm font-medium hover:text-muted-foreground transition-colors"
-            >
+            <button onClick={() => scrollToSection('about')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
               Who we are
             </button>
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-sm font-medium hover:text-muted-foreground transition-colors"
-            >
+            <button onClick={() => scrollToSection('services')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
               What we do
             </button>
-            <button 
-              onClick={() => scrollToSection('what-you-get')}
-              className="text-sm font-medium hover:text-muted-foreground transition-colors"
-            >
+            <button onClick={() => scrollToSection('what-you-get')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
               What you get
             </button>
-            <button 
-              onClick={() => scrollToSection('mission')}
-              className="text-sm font-medium hover:text-muted-foreground transition-colors"
-            >
+            <button onClick={() => scrollToSection('mission')} className="text-sm font-medium hover:text-muted-foreground transition-colors">
               Our Mission
             </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-sm font-medium hover:text-muted-foreground transition-colors"
-            >
-              Contact
-            </button>
+            
           </div>
 
-          <Contact 
-            trigger={
-              <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
+          <Contact trigger={<Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                 Get Started →
-              </Button>
-            }
-          />
+              </Button>} />
         </div>
       </div>
-    </nav>
-  );
+    </nav>;
 };
-
 export default Navigation;
