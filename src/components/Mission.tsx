@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Contact from "./Contact";
 
 const Mission = () => {
   return (
@@ -31,9 +32,13 @@ const Mission = () => {
             </div>
 
             <div className="pt-4">
-              <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto">
-                Get Started →
-              </Button>
+              <Contact 
+                trigger={
+                  <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 w-full sm:w-auto">
+                    Get Started →
+                  </Button>
+                }
+              />
               <p className="text-sm text-muted-foreground mt-3">
                 Book your free discovery call
               </p>
