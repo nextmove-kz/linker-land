@@ -32,6 +32,12 @@ const Navigation = () => {
               What we do
             </button>
             <button 
+              onClick={() => scrollToSection('what-you-get')}
+              className="text-sm font-medium hover:text-muted-foreground transition-colors"
+            >
+              What you get
+            </button>
+            <button 
               onClick={() => scrollToSection('mission')}
               className="text-sm font-medium hover:text-muted-foreground transition-colors"
             >
