@@ -3,7 +3,7 @@ import Contact from "./Contact";
 
 const Mission = () => {
   return (
-    <section id="mission" className="py-20 px-6 bg-muted/30">
+    <section id="mission" className="py-20 px-6 bg-background">
       <div className="container mx-auto max-w-6xl">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Left Column */}
