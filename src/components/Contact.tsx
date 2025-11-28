@@ -66,19 +66,46 @@ const Contact = ({ trigger, triggerText, triggerClassName, translations }: Conta
 
     setIsSubmitting(true);
     
-    // TODO: Implement actual form submission
-    console.log({ contactMethod, contactInfo });
-    
-    // Simulate submission
-    setTimeout(() => {
+    // Map contact method to API format
+    const contactTypeMap: Record<string, string> = {
+      email: "Email",
+      telegram: "Telegram",
+      whatsapp: "WhatsApp",
+      other: "Other",
+    };
+
+    try {
+      const response = await fetch("https://linker-bot.onrender.com/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contact_type: contactTypeMap[contactMethod] || "Other",
+          contact_text: contactInfo.trim(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit");
+      }
+
       toast({
         title: t.toasts.success.title,
         description: t.toasts.success.description,
       });
       setContactInfo("");
-      setIsSubmitting(false);
       setOpen(false);
-    }, 1000);
+    } catch (error) {
+      console.error("Submit error:", error);
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const getPlaceholder = () => {
