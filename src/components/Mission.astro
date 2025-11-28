@@ -1,30 +1,33 @@
 ---
 import Contact from "./Contact";
 import teamImage from "@/assets/team-collaboration.jpg?url";
+import { type Locale } from '@/lib/i18n';
 
 interface Props {
   translations: typeof import('@/i18n/en.json')['mission'];
   contactTranslations: typeof import('@/i18n/en.json')['contact'];
+  locale: Locale;
 }
 
-const { translations: t, contactTranslations } = Astro.props;
+const { translations: t, contactTranslations, locale } = Astro.props;
+const isRu = locale === 'ru';
 ---
 
 <section id="mission" class="py-20 px-1.5 md:px-6 bg-background">
   <div class="container mx-auto max-w-6xl">
-    <div class="grid md:grid-cols-[6fr_4fr] gap-12 items-start">
+    <div class={`grid gap-12 items-start ${isRu ? 'md:grid-cols-[7fr_3fr]' : 'md:grid-cols-[6fr_4fr]'}`}>
       <!-- Left Column -->
       <div class="space-y-6 pt-8 relative">
         <p class="text-sm font-medium text-muted-foreground uppercase tracking-wide">
           {t.label}
         </p>
-        <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+        <h2 class={`font-bold leading-tight ${isRu ? 'text-3xl md:text-4xl lg:text-5xl' : 'text-4xl md:text-5xl'}`}>
           {t.title}
         </h2>
 
         <!-- Overlapping Card -->
-        <div class="bg-background p-6 md:p-8 rounded-sm shadow-[0_0_0_1px_rgba(0,0,0,0.05),0_0_16px_rgba(0,0,0,0.1)] mt-8 relative md:absolute md:-right-32 md:top-auto md:w-[calc(100%+12rem)] z-10">
-          <h3 class="text-2xl md:text-4xl font-light text-muted-foreground italic mb-6">
+        <div class={`bg-background p-6 md:p-8 rounded-sm shadow-[0_0_0_1px_rgba(0,0,0,0.05),0_0_16px_rgba(0,0,0,0.1)] mt-8 relative md:absolute md:top-auto z-10 ${isRu ? 'md:-right-24 md:w-[calc(100%+8rem)]' : 'md:-right-32 md:w-[calc(100%+12rem)]'}`}>
+          <h3 class={`font-light text-muted-foreground italic mb-6 ${isRu ? 'text-xl md:text-3xl lg:text-4xl' : 'text-2xl md:text-4xl'}`}>
             {t.card.title}
           </h3>
           

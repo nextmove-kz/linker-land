@@ -27,13 +27,13 @@ const t = getTranslations(locale);
   <div class="min-h-screen bg-background">
     <Navigation client:load locale={locale} translations={t.navigation} />
     <main>
-      <Hero translations={t.hero} contactTranslations={t.contact} />
-      <About translations={t.about} />
-      <Services translations={t.services} />
-      <WhatYouGet translations={t.whatYouGet} />
-      <Mission translations={t.mission} contactTranslations={t.contact} />
-      <Portfolio translations={t.portfolio} />
-      <Reviews translations={t.reviews} />
+      <Hero translations={t.hero} contactTranslations={t.contact} locale={locale} />
+      <About translations={t.about} locale={locale} />
+      <Services translations={t.services} locale={locale} />
+      <WhatYouGet translations={t.whatYouGet} locale={locale} />
+      <Mission translations={t.mission} contactTranslations={t.contact} locale={locale} />
+      <Portfolio translations={t.portfolio} locale={locale} />
+      <Reviews translations={t.reviews} locale={locale} />
     </main>
     <Footer translations={t.footer} />
   </div>

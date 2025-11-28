@@ -1,29 +1,32 @@
 ---
 import Contact from "./Contact";
+import { type Locale } from '@/lib/i18n';
 
 interface Props {
   translations: typeof import('@/i18n/en.json')['hero'];
   contactTranslations: typeof import('@/i18n/en.json')['contact'];
+  locale: Locale;
 }
 
-const { translations: t, contactTranslations } = Astro.props;
+const { translations: t, contactTranslations, locale } = Astro.props;
+const isRu = locale === 'ru';
 ---
 
 <section class="pt-32 pb-20 px-1.5 md:px-6">
   <div class="container mx-auto max-w-6xl">
     <div class="space-y-8">
-      <h1 class="text-6xl md:text-8xl font-black leading-tight">
+      <h1 class={`font-black leading-tight ${isRu ? 'text-5xl md:text-7xl lg:text-8xl' : 'text-6xl md:text-8xl'}`}>
         {t.title.line1}
         <br />
         <span class="italic font-light">{t.title.line2}</span> {t.title.line3}
         <br />
-        <span class="bg-primary text-primary-foreground px-4 inline-block">
+        <span class={`bg-primary text-primary-foreground ${isRu ? 'px-3 py-1' : 'px-4'} inline-block`}>
           {t.title.line4}
         </span>
       </h1>
       
-      <div class="max-w-2xl space-y-4">
-        <p class="text-lg text-foreground">
+      <div class={`space-y-4 ${isRu ? 'max-w-3xl' : 'max-w-2xl'}`}>
+        <p class={`text-foreground ${isRu ? 'text-base md:text-lg' : 'text-lg'}`}>
           {t.description.part1}{" "}
           {t.description.part2}{" "}
           <span class="font-bold">

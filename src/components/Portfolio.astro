@@ -1,9 +1,13 @@
 ---
+import { type Locale } from '@/lib/i18n';
+
 interface Props {
   translations: typeof import('@/i18n/en.json')['portfolio'];
+  locale: Locale;
 }
 
-const { translations: t } = Astro.props;
+const { translations: t, locale } = Astro.props;
+const isRu = locale === 'ru';
 ---
 
 <section id="portfolio" class="py-20 px-1.5 md:px-6 bg-background">
@@ -12,7 +16,7 @@ const { translations: t } = Astro.props;
       <p class="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-4">
         {t.label}
       </p>
-      <h2 class="text-4xl md:text-5xl font-bold leading-tight max-w-3xl">
+      <h2 class={`font-bold leading-tight ${isRu ? 'max-w-4xl text-3xl md:text-4xl lg:text-5xl' : 'max-w-3xl text-4xl md:text-5xl'}`}>
         {t.title}
       </h2>
     </div>
@@ -23,10 +27,10 @@ const { translations: t } = Astro.props;
           <p class="text-xs text-muted-foreground uppercase tracking-wider mb-4">
             {project.client}
           </p>
-          <h3 class="text-2xl font-bold mb-4">
+          <h3 class={`font-bold mb-4 ${isRu ? 'text-xl md:text-2xl' : 'text-2xl'}`}>
             {project.title}
           </h3>
-          <p class="text-sm text-muted-foreground mb-6 leading-relaxed">
+          <p class={`text-muted-foreground mb-6 leading-relaxed ${isRu ? 'text-xs md:text-sm' : 'text-sm'}`}>
             {project.description}
           </p>
           <div class="mb-6">

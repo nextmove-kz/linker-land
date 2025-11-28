@@ -1,11 +1,14 @@
 ---
 import { Code2, Layers, RefreshCw, Settings } from "lucide-react";
+import { type Locale } from '@/lib/i18n';
 
 interface Props {
   translations: typeof import('@/i18n/en.json')['services'];
+  locale: Locale;
 }
 
-const { translations: t } = Astro.props;
+const { translations: t, locale } = Astro.props;
+const isRu = locale === 'ru';
 
 const icons = [Settings, Layers, RefreshCw, Code2];
 ---
@@ -13,12 +16,12 @@ const icons = [Settings, Layers, RefreshCw, Code2];
 <section id="services" class="py-20 px-1.5 md:px-6">
   <div class="container mx-auto max-w-6xl">
     <div class="mb-16">
-      <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+      <h2 class={`font-bold leading-tight mb-6 ${isRu ? 'text-4xl md:text-5xl lg:text-6xl' : 'text-5xl md:text-6xl'}`}>
         {t.title.line1}
         <br />
         {t.title.line2}
       </h2>
-      <p class="text-lg max-w-2xl text-muted-foreground">
+      <p class={`max-w-2xl text-muted-foreground ${isRu ? 'text-base md:text-lg' : 'text-lg'}`}>
         {t.description}
       </p>
     </div>

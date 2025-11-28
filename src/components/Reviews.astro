@@ -1,9 +1,13 @@
 ---
+import { type Locale } from '@/lib/i18n';
+
 interface Props {
   translations: typeof import('@/i18n/en.json')['reviews'];
+  locale: Locale;
 }
 
-const { translations: t } = Astro.props;
+const { translations: t, locale } = Astro.props;
+const isRu = locale === 'ru';
 ---
 
 <section id="reviews" class="py-20 px-1.5 md:px-6 bg-background">
@@ -12,7 +16,7 @@ const { translations: t } = Astro.props;
       <p class="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-4">
         {t.label}
       </p>
-      <h2 class="text-4xl md:text-5xl font-bold leading-tight">
+      <h2 class={`font-bold leading-tight ${isRu ? 'text-3xl md:text-4xl lg:text-5xl' : 'text-4xl md:text-5xl'}`}>
         {t.title}
       </h2>
     </div>
@@ -30,7 +34,7 @@ const { translations: t } = Astro.props;
               </svg>
             ))}
           </div>
-          <p class="text-lg mb-8 leading-relaxed">
+          <p class={`mb-8 leading-relaxed ${isRu ? 'text-base md:text-lg' : 'text-lg'}`}>
             "{testimonial.quote}"
           </p>
           <div>
