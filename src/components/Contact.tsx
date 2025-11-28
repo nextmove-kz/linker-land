@@ -13,11 +13,44 @@ interface ContactProps {
   translations?: typeof import('@/i18n/en.json')['contact'];
 }
 
+// Validation helpers
+const isValidEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+const formatTelegramUsername = (value: string): string => {
+  // Remove everything except letters, numbers, and underscores
+  let cleaned = value.replace(/[^a-zA-Z0-9_@]/g, '');
+  // Ensure it starts with @
+  if (!cleaned.startsWith('@')) {
+    cleaned = '@' + cleaned.replace(/@/g, '');
+  } else {
+    // Remove any extra @ symbols
+    cleaned = '@' + cleaned.slice(1).replace(/@/g, '');
+  }
+  return cleaned;
+};
+
+const formatPhoneNumber = (value: string): string => {
+  // Remove everything except digits and +
+  let cleaned = value.replace(/[^\d+]/g, '');
+  // Ensure it starts with +
+  if (!cleaned.startsWith('+')) {
+    cleaned = '+' + cleaned.replace(/\+/g, '');
+  } else {
+    // Remove any extra + symbols
+    cleaned = '+' + cleaned.slice(1).replace(/\+/g, '');
+  }
+  return cleaned;
+};
+
 const Contact = ({ trigger, triggerText, triggerClassName, translations }: ContactProps) => {
   const [open, setOpen] = useState(false);
   const [contactMethod, setContactMethod] = useState("email");
   const [contactInfo, setContactInfo] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [validationError, setValidationError] = useState("");
   const { toast } = useToast();
 
   // Default translations (fallback to English)
@@ -49,18 +82,74 @@ const Contact = ({ trigger, triggerText, triggerClassName, translations }: Conta
         title: "Message received!",
         description: "We'll get back to you shortly.",
       },
+      error: {
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+      },
+    },
+    validation: {
+      invalidEmail: "Please enter a valid email address",
+      invalidTelegram: "Please enter a valid Telegram username",
+      invalidWhatsapp: "Please enter a valid phone number",
     },
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
+  const handleContactInfoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value;
+    setValidationError("");
+
+    switch (contactMethod) {
+      case "telegram":
+        value = formatTelegramUsername(value);
+        break;
+      case "whatsapp":
+        value = formatPhoneNumber(value);
+        break;
+    }
+
+    setContactInfo(value);
+  };
+
+  const validateInput = (): boolean => {
     if (!contactInfo.trim()) {
       toast({
         title: t.toasts.infoRequired.title,
         description: t.toasts.infoRequired.description,
         variant: "destructive",
       });
+      return false;
+    }
+
+    switch (contactMethod) {
+      case "email":
+        if (!isValidEmail(contactInfo)) {
+          setValidationError(t.validation?.invalidEmail || "Please enter a valid email address");
+          return false;
+        }
+        break;
+      case "telegram":
+        // Telegram username: @ + at least 5 characters (letters, numbers, underscores)
+        if (!/^@[a-zA-Z0-9_]{5,}$/.test(contactInfo)) {
+          setValidationError(t.validation?.invalidTelegram || "Please enter a valid Telegram username");
+          return false;
+        }
+        break;
+      case "whatsapp":
+        // Phone number: + followed by 7-15 digits
+        if (!/^\+\d{7,15}$/.test(contactInfo)) {
+          setValidationError(t.validation?.invalidWhatsapp || "Please enter a valid phone number");
+          return false;
+        }
+        break;
+    }
+
+    return true;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!validateInput()) {
       return;
     }
 
@@ -99,8 +188,8 @@ const Contact = ({ trigger, triggerText, triggerClassName, translations }: Conta
     } catch (error) {
       console.error("Submit error:", error);
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
+        title: t.toasts.error?.title || "Error",
+        description: t.toasts.error?.description || "Failed to send message. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -159,7 +248,11 @@ const Contact = ({ trigger, triggerText, triggerClassName, translations }: Conta
                 <button
                   key={value}
                   type="button"
-                  onClick={() => setContactMethod(value)}
+                  onClick={() => {
+                    setContactMethod(value);
+                    setContactInfo(value === "telegram" ? "@" : value === "whatsapp" ? "+" : "");
+                    setValidationError("");
+                  }}
                   className={`flex items-center justify-center gap-2 px-4 py-3 rounded-md border-2 transition-all ${
                     contactMethod === value
                       ? "border-primary bg-primary/10 text-primary font-medium"
@@ -179,11 +272,15 @@ const Contact = ({ trigger, triggerText, triggerClassName, translations }: Conta
             </Label>
             <Input
               id="contact-info"
-              type="text"
+              type={contactMethod === "email" ? "email" : "text"}
               placeholder={getPlaceholder()}
               value={contactInfo}
-              onChange={(e) => setContactInfo(e.target.value)}
+              onChange={handleContactInfoChange}
+              className={validationError ? "border-destructive" : ""}
             />
+            {validationError && (
+              <p className="text-sm text-destructive">{validationError}</p>
+            )}
           </div>
 
           <Button

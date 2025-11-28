@@ -187,7 +187,16 @@
       "success": {
         "title": "Message received!",
         "description": "We'll get back to you shortly."
+      },
+      "error": {
+        "title": "Error",
+        "description": "Failed to send message. Please try again."
       }
+    },
+    "validation": {
+      "invalidEmail": "Please enter a valid email address",
+      "invalidTelegram": "Please enter a valid Telegram username (at least 5 characters)",
+      "invalidWhatsapp": "Please enter a valid phone number with country code"
     }
   },
   "footer": {
