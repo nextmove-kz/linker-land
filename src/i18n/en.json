@@ -30,82 +30,82 @@
       "line2": "vision to life."
     },
     "paragraph1": {
-      "part1": "Building exceptional digital products requires more than just code.",
-      "part2": "Your architecture, strategy, and execution must align perfectly, with",
-      "part3": "unwavering consistency -",
-      "part4": "but we do it all for you."
+      "part1": "Your idea deserves a foundation that scales with your success,",
+      "part2": "built right from day one —",
+      "part3": "so you never",
+      "part4": "have to rebuild."
     },
-    "paragraph2": "Work directly with our team of developers knowledgeable in a wide array of technologies. From optimizing complex backend solutions for distributed systems to crafting the most intricate user experiences, our tight-knit team leverages collective expertise to deliver results that exceed expectations.",
-    "paragraph3": "No more endless searching or mastering every technical skill yourself. We're your dedicated technical partner with everything you need to succeed."
+    "paragraph2": "We're the technical team you'd hire full-time but can't find. Founders trust us because we translate complex decisions into clear business outcomes — no jargon, no black boxes. You focus on your vision. We handle the engineering.",
+    "paragraph3": "You get clean, documented, production-ready software that any developer can understand. When you build your own team, they'll inherit a codebase they can actually work with — not a puzzle to decode."
   },
   "services": {
     "title": {
       "line1": "No more",
       "line2": "guesswork."
     },
-    "description": "Leveraging collective expertise, we'll position you as a technical leader while converting your growing audience into tangible results.",
+    "description": "Whether you're launching your first product or scaling an existing one, we deliver solutions that work today and grow with you tomorrow.",
     "items": [
       {
-        "title": "Backend Architecture",
-        "description": "Complex distributed systems demand expertise. We architect and build scalable backend solutions that handle millions of requests while maintaining performance and reliability."
+        "title": "Launch-Ready Products",
+        "description": "From first line of code to production. We build fast without cutting corners — clean architecture and documentation your future team will thank you for."
       },
       {
-        "title": "Frontend & UX",
-        "description": "User experience is everything. Our team creates intricate, seamless interfaces that break barriers in interactivity, ensuring your users get the best possible experience."
+        "title": "Seamless Experiences",
+        "description": "Your users won't wait for confusing interfaces. We craft intuitive experiences that feel natural — turning visitors into customers."
       },
       {
-        "title": "Project Revival",
-        "description": "Legacy systems holding you back? We specialize in breathing new life into existing projects through modern architecture, optimization, and strategic refactoring."
+        "title": "Rescue & Scale",
+        "description": "Product slowing you down? We diagnose bottlenecks, fix what's broken, and set you up for growth — without starting from scratch."
       },
       {
-        "title": "Technical Consulting",
-        "description": "Strategic technical guidance when you need it most. From technology selection to architecture reviews, we help you make informed decisions that align with your goals."
+        "title": "Technical Partnership",
+        "description": "Need expert guidance without full-time commitment? We help you navigate tech choices and avoid expensive mistakes. Have 10 CTOs one text away."
       }
     ]
   },
   "whatYouGet": {
     "label": "What You Get",
     "title": {
-      "line1": "Built to last",
-      "line2": "5+ years."
+      "line1": "Fast now.",
+      "line2": "Solid forever."
     },
     "description": "Most agencies build for now. We build for the next 5 years. That means your project stays modern, your team can grow it without roadblocks, and you won't need costly rebuilds when your business evolves.",
     "benefits": [
       {
-        "title": "Future-Proof Foundation",
-        "description": "Your project won't feel outdated in 6 months. We choose proven, modern tools that keep you competitive for years."
+        "title": "Ship Fast, Stay Fast",
+        "description": "Launch on schedule without technical debt slowing you down."
       },
       {
         "title": "Easy Handoffs",
-        "description": "Bringing on new team members or taking over internally? Our clear documentation means no one is left guessing."
+        "description": "Clean code and docs your future developers will actually understand."
       },
       {
-        "title": "Maintainable from Day One",
-        "description": "Need to add features later? Our clean approach means you won't hit walls or need expensive rewrites."
+        "title": "No Costly Rewrites",
+        "description": "Architecture that evolves with you, not against you."
       },
       {
-        "title": "Scales With Your Growth",
-        "description": "Start small, grow big. Performance that handles 100 users today and 100,000 tomorrow."
+        "title": "Scales With You",
+        "description": "100 users today, 100,000 tomorrow. Same codebase."
       },
       {
-        "title": "Built to Evolve",
-        "description": "Your needs will change. Our architecture adapts to new features without breaking what already works."
+        "title": "Add Features Easily",
+        "description": "New requirements? Your product adapts without breaking."
       },
       {
-        "title": "Developer-Friendly Setup",
-        "description": "Your future team will thank you. Everything is organized for smooth development, not frustration."
+        "title": "Full Transparency",
+        "description": "Complete documentation. Your project, your control. No hidden costs for outsourcing."
       }
     ]
   },
   "mission": {
     "label": "Our Mission",
-    "title": "With our expertise, we've built solutions that scale from prototype to production.",
+    "title": "We do everything to avoid choosing between speed and reliability.",
     "card": {
       "title": "Now it's your turn.",
       "teamName": "Linker Team",
       "teamRole": "Technical Partners",
       "cta": "Get Started →",
-      "subtext": "Book your free discovery call"
+      "subtext": "Free discovery call"
     },
     "imageAlt": "Professional development team collaborating"
   },
@@ -138,7 +138,7 @@
   },
   "reviews": {
     "label": "Reviews",
-    "title": "Trusted by founders and teams",
+    "title": "Founders trust us with their vision",
     "testimonials": [
       {
         "quote": "They took our vision and turned it into reality faster than we thought possible. The team understood our business goals, not just the tech requirements.",
