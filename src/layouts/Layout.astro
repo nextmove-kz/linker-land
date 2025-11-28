@@ -8,6 +8,11 @@ interface Props {
 }
 
 const { title = "Linker.kz - Technical Excellence for Your Projects", description = "Kazakhstan-based outsource company focused on giving proper chance for ideas to blossom through our technical expertise and experience." } = Astro.props;
+
+// Generate absolute URL for OpenGraph/Twitter images
+const imageUrl = Astro.site 
+  ? new URL('/image.png', Astro.site).href
+  : new URL('/image.png', Astro.url).href;
 ---
 
 <!doctype html>
@@ -25,11 +30,11 @@ const { title = "Linker.kz - Technical Excellence for Your Projects", descriptio
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content={imageUrl} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@Linker" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:image" content={imageUrl} />
   </head>
 
   <body>
