@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Contact from "./Contact";
-import teamImage from "@/assets/team-collaboration.jpg";
+import teamImage from "@/assets/team-collaboration.jpg?url";
 
 const Mission = () => {
   return (

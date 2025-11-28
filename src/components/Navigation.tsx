@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo.png?url";
 import Contact from "./Contact";
 const Navigation = () => {
   const scrollToSection = (id: string) => {
