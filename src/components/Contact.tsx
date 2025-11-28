@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Mail, MessageCircle, Phone } from "lucide-react";
+import { Mail, MessageCircle, Phone, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 interface ContactProps {
@@ -47,8 +47,8 @@ const formatPhoneNumber = (value: string): string => {
 
 const Contact = ({ trigger, triggerText, triggerClassName, translations }: ContactProps) => {
   const [open, setOpen] = useState(false);
-  const [contactMethod, setContactMethod] = useState("email");
-  const [contactInfo, setContactInfo] = useState("");
+  const [contactMethod, setContactMethod] = useState("telegram");
+  const [contactInfo, setContactInfo] = useState("@");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [validationError, setValidationError] = useState("");
   const { toast } = useToast();
@@ -183,7 +183,8 @@ const Contact = ({ trigger, triggerText, triggerClassName, translations }: Conta
         title: t.toasts.success.title,
         description: t.toasts.success.description,
       });
-      setContactInfo("");
+      setContactMethod("telegram");
+      setContactInfo("@");
       setOpen(false);
     } catch (error) {
       console.error("Submit error:", error);
@@ -211,8 +212,8 @@ const Contact = ({ trigger, triggerText, triggerClassName, translations }: Conta
   };
 
   const contactMethods = [
+    { value: "telegram", label: t.methods.telegram, icon: Send },
     { value: "email", label: t.methods.email, icon: Mail },
-    { value: "telegram", label: t.methods.telegram, icon: MessageCircle },
     { value: "whatsapp", label: t.methods.whatsapp, icon: Phone },
     { value: "other", label: t.methods.other, icon: MessageCircle },
   ];
