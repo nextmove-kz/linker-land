@@ -1,21 +1,21 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Navigation from '@/components/Navigation';
-import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Services from '@/components/Services';
-import WhatYouGet from '@/components/WhatYouGet';
-import Mission from '@/components/Mission';
-import Portfolio from '@/components/Portfolio';
-import Reviews from '@/components/Reviews';
-import Footer from '@/components/Footer';
+import Hero from '@/components/Hero.astro';
+import About from '@/components/About.astro';
+import Services from '@/components/Services.astro';
+import WhatYouGet from '@/components/WhatYouGet.astro';
+import Mission from '@/components/Mission.astro';
+import Portfolio from '@/components/Portfolio.astro';
+import Reviews from '@/components/Reviews.astro';
+import Footer from '@/components/Footer.astro';
 ---
 
 <Layout>
   <div class="min-h-screen bg-background">
     <Navigation client:load />
     <main>
-      <Hero client:load />
+      <Hero />
       <About />
       <Services />
       <WhatYouGet />

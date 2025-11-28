@@ -1,0 +1,65 @@
+---
+import { CheckCircle2 } from "lucide-react";
+
+const benefits = [
+  {
+    title: "Future-Proof Foundation",
+    description: "Your project won't feel outdated in 6 months. We choose proven, modern tools that keep you competitive for years.",
+  },
+  {
+    title: "Easy Handoffs",
+    description: "Bringing on new team members or taking over internally? Our clear documentation means no one is left guessing.",
+  },
+  {
+    title: "Maintainable from Day One",
+    description: "Need to add features later? Our clean approach means you won't hit walls or need expensive rewrites.",
+  },
+  {
+    title: "Scales With Your Growth",
+    description: "Start small, grow big. Performance that handles 100 users today and 100,000 tomorrow.",
+  },
+  {
+    title: "Built to Evolve",
+    description: "Your needs will change. Our architecture adapts to new features without breaking what already works.",
+  },
+  {
+    title: "Developer-Friendly Setup",
+    description: "Your future team will thank you. Everything is organized for smooth development, not frustration.",
+  },
+];
+---
+
+<section id="what-you-get" class="py-20 px-6 bg-background">
+  <div class="container mx-auto max-w-6xl">
+    <div class="mb-16">
+      <p class="text-sm font-medium text-muted-foreground mb-4">What You Get</p>
+      <h2 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+        Built to last
+        <br />
+        5+ years.
+      </h2>
+      <p class="text-lg max-w-2xl text-muted-foreground">
+        Most agencies build for now. We build for the next 5 years. That means your 
+        project stays modern, your team can grow it without roadblocks, and you won't 
+        need costly rebuilds when your business evolves.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {benefits.map((benefit) => (
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <CheckCircle2 client:load className="h-6 w-6 text-primary mt-0.5 flex-shrink-0" />
+            <div>
+              <h3 class="text-xl font-bold mb-2">{benefit.title}</h3>
+              <p class="text-muted-foreground leading-relaxed">
+                {benefit.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

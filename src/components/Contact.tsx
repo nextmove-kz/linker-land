@@ -8,9 +8,11 @@ import { useToast } from "@/hooks/use-toast";
 
 interface ContactProps {
   trigger?: React.ReactNode;
+  triggerText?: string;
+  triggerClassName?: string;
 }
 
-const Contact = ({ trigger }: ContactProps) => {
+const Contact = ({ trigger, triggerText, triggerClassName }: ContactProps) => {
   const [open, setOpen] = useState(false);
   const [contactMethod, setContactMethod] = useState("email");
   const [contactInfo, setContactInfo] = useState("");
@@ -66,9 +68,19 @@ const Contact = ({ trigger }: ContactProps) => {
     { value: "other", label: "Other", icon: MessageCircle },
   ];
 
+  const defaultTrigger = triggerText ? (
+    <Button size="lg" className={triggerClassName || "bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8"}>
+      {triggerText}
+    </Button>
+  ) : null;
+
   return (
     <Dialog open={open} onOpenChange={setOpen}>
-      {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
+      {(trigger || defaultTrigger) && (
+        <DialogTrigger asChild>
+          {trigger || defaultTrigger}
+        </DialogTrigger>
+      )}
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-2xl">Let's work together</DialogTitle>

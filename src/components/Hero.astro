@@ -1,0 +1,41 @@
+---
+import Contact from "./Contact";
+---
+
+<section class="pt-32 pb-20 px-6">
+  <div class="container mx-auto max-w-6xl">
+    <div class="space-y-8">
+      <h1 class="text-6xl md:text-8xl font-black leading-tight">
+        Technical
+        <br />
+        <span class="italic font-light">Excellence</span> for
+        <br />
+        <span class="bg-primary text-primary-foreground px-4 inline-block">
+          YOUR IDEAS
+        </span>
+      </h1>
+      
+      <div class="max-w-2xl space-y-4">
+        <p class="text-lg text-foreground">
+          Give your ideas a proper chance to blossom with our world-class
+          technical team,{" "}
+          <span class="font-bold">
+            bringing expertise from complex backend systems to seamless user experiences.
+          </span>
+        </p>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 pt-4">
+        <Contact 
+          client:load
+          triggerText="Get Started →"
+          triggerClassName="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8"
+        />
+        <p class="text-sm text-muted-foreground self-center">
+          Book your free discovery call
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
