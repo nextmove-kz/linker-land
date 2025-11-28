@@ -1,4 +1,6 @@
 ---
+import Container from './Container.astro';
+
 interface Props {
   translations: typeof import('@/i18n/en.json')['footer'];
 }
@@ -7,11 +9,11 @@ const { translations: t } = Astro.props;
 ---
 
 <footer class="bg-primary text-primary-foreground py-8 px-1.5 md:px-6">
-  <div class="container mx-auto max-w-6xl">
+  <Container>
     <div class="flex flex-col md:flex-row justify-between items-center gap-4">
       <p class="text-sm">{t.copyright}</p>
       <p class="text-sm">{t.tagline}</p>
     </div>
-  </div>
+  </Container>
 </footer>
 

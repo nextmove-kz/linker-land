@@ -1,5 +1,6 @@
 ---
 import Contact from "./Contact";
+import Container from "./Container.astro";
 import { type Locale } from '@/lib/i18n';
 
 interface Props {
@@ -13,7 +14,7 @@ const isRu = locale === 'ru';
 ---
 
 <section class="pt-32 pb-20 px-1.5 md:px-6">
-  <div class="container mx-auto max-w-6xl">
+  <Container>
     <div class="space-y-8">
       <h1 class={`font-black leading-tight ${isRu ? 'text-5xl md:text-7xl lg:text-8xl' : 'text-6xl md:text-8xl'}`}>
         {t.title.line1}
@@ -46,7 +47,7 @@ const isRu = locale === 'ru';
           {t.cta.subtext}
         </p>
       </div>
-    </div>
-  </div>
+      </div>
+  </Container>
 </section>
 

@@ -85,9 +85,9 @@ const Navigation = ({ locale, translations: t }: NavigationProps) => {
                 </button>
               ))}
             </div>
-            <Contact
+          <Contact
               trigger={<Button className="bg-primary text-primary-foreground hover:bg-primary/90">{t.getStarted}</Button>}
-            />
+          />
           </div>
         </div>
       </div>

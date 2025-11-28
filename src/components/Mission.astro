@@ -2,6 +2,7 @@
 import Contact from "./Contact";
 import teamImage from "@/assets/team-collaboration.jpg?url";
 import { type Locale } from '@/lib/i18n';
+import Container from './Container.astro';
 
 interface Props {
   translations: typeof import('@/i18n/en.json')['mission'];
@@ -13,8 +14,8 @@ const { translations: t, contactTranslations, locale } = Astro.props;
 const isRu = locale === 'ru';
 ---
 
-<section id="mission" class="py-20 px-1.5 md:px-6 bg-background">
-  <div class="container mx-auto max-w-6xl">
+<section id="mission" class="pb-28 px-1.5 md:px-6 bg-background">
+  <Container>
     <div class={`grid gap-12 items-start ${isRu ? 'md:grid-cols-[7fr_3fr]' : 'md:grid-cols-[6fr_4fr]'}`}>
       <!-- Left Column -->
       <div class="space-y-6 pt-8 relative">
@@ -61,6 +62,6 @@ const isRu = locale === 'ru';
         </div>
       </div>
     </div>
-  </div>
+  </Container>
 </section>
 

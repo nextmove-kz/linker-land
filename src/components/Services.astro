@@ -1,6 +1,7 @@
 ---
 import { Code2, Layers, RefreshCw, Settings } from "lucide-react";
 import { type Locale } from '@/lib/i18n';
+import Container from './Container.astro';
 
 interface Props {
   translations: typeof import('@/i18n/en.json')['services'];
@@ -14,7 +15,7 @@ const icons = [Settings, Layers, RefreshCw, Code2];
 ---
 
 <section id="services" class="py-20 px-1.5 md:px-6">
-  <div class="container mx-auto max-w-6xl">
+  <Container>
     <div class="mb-16">
       <h2 class={`font-bold leading-tight mb-6 ${isRu ? 'text-4xl md:text-5xl lg:text-6xl' : 'text-5xl md:text-6xl'}`}>
         {t.title.line1}
@@ -46,5 +47,5 @@ const icons = [Settings, Layers, RefreshCw, Code2];
         );
       })}
     </div>
-  </div>
+  </Container>
 </section>
