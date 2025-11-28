@@ -1,13 +1,19 @@
 ---
 import '../styles/global.css';
 import Providers from '@/components/Providers';
+import { type Locale, defaultLocale } from '@/lib/i18n';
 
 interface Props {
   title?: string;
   description?: string;
+  locale?: Locale;
 }
 
-const { title = "Linker.kz - Technical Excellence for Your Projects", description = "Kazakhstan-based outsource company focused on giving proper chance for ideas to blossom through our technical expertise and experience." } = Astro.props;
+const { 
+  title = "Linker.kz - Technical Excellence for Your Projects", 
+  description = "Kazakhstan-based outsource company focused on giving proper chance for ideas to blossom through our technical expertise and experience.",
+  locale = defaultLocale
+} = Astro.props;
 
 // Generate absolute URL for OpenGraph/Twitter images
 const imageUrl = Astro.site 
@@ -16,7 +22,7 @@ const imageUrl = Astro.site
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={locale}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

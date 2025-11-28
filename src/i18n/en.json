@@ -1,0 +1,203 @@
+{
+  "hero": {
+    "title": {
+      "line1": "Technical",
+      "line2": "Excellence",
+      "line3": "for",
+      "line4": "YOUR IDEAS"
+    },
+    "description": {
+      "part1": "Give your ideas a proper chance to blossom with our world-class",
+      "part2": "technical team,",
+      "part3": "bringing expertise from complex backend systems to seamless user experiences."
+    },
+    "cta": {
+      "button": "Get Started →",
+      "subtext": "Book your free discovery call"
+    }
+  },
+  "navigation": {
+    "whoWeAre": "Who we are",
+    "whatWeDo": "What we do",
+    "portfolio": "Portfolio",
+    "reviews": "Reviews",
+    "getStarted": "Get Started →"
+  },
+  "about": {
+    "label": "Who we are",
+    "title": {
+      "line1": "We bring your",
+      "line2": "vision to life."
+    },
+    "paragraph1": {
+      "part1": "Building exceptional digital products requires more than just code.",
+      "part2": "Your architecture, strategy, and execution must align perfectly, with",
+      "part3": "unwavering consistency -",
+      "part4": "but we do it all for you."
+    },
+    "paragraph2": "Work directly with our team of developers knowledgeable in a wide array of technologies. From optimizing complex backend solutions for distributed systems to crafting the most intricate user experiences, our tight-knit team leverages collective expertise to deliver results that exceed expectations.",
+    "paragraph3": "No more endless searching or mastering every technical skill yourself. We're your dedicated technical partner with everything you need to succeed."
+  },
+  "services": {
+    "title": {
+      "line1": "No more",
+      "line2": "guesswork."
+    },
+    "description": "Leveraging collective expertise, we'll position you as a technical leader while converting your growing audience into tangible results.",
+    "items": [
+      {
+        "title": "Backend Architecture",
+        "description": "Complex distributed systems demand expertise. We architect and build scalable backend solutions that handle millions of requests while maintaining performance and reliability."
+      },
+      {
+        "title": "Frontend & UX",
+        "description": "User experience is everything. Our team creates intricate, seamless interfaces that break barriers in interactivity, ensuring your users get the best possible experience."
+      },
+      {
+        "title": "Project Revival",
+        "description": "Legacy systems holding you back? We specialize in breathing new life into existing projects through modern architecture, optimization, and strategic refactoring."
+      },
+      {
+        "title": "Technical Consulting",
+        "description": "Strategic technical guidance when you need it most. From technology selection to architecture reviews, we help you make informed decisions that align with your goals."
+      }
+    ]
+  },
+  "whatYouGet": {
+    "label": "What You Get",
+    "title": {
+      "line1": "Built to last",
+      "line2": "5+ years."
+    },
+    "description": "Most agencies build for now. We build for the next 5 years. That means your project stays modern, your team can grow it without roadblocks, and you won't need costly rebuilds when your business evolves.",
+    "benefits": [
+      {
+        "title": "Future-Proof Foundation",
+        "description": "Your project won't feel outdated in 6 months. We choose proven, modern tools that keep you competitive for years."
+      },
+      {
+        "title": "Easy Handoffs",
+        "description": "Bringing on new team members or taking over internally? Our clear documentation means no one is left guessing."
+      },
+      {
+        "title": "Maintainable from Day One",
+        "description": "Need to add features later? Our clean approach means you won't hit walls or need expensive rewrites."
+      },
+      {
+        "title": "Scales With Your Growth",
+        "description": "Start small, grow big. Performance that handles 100 users today and 100,000 tomorrow."
+      },
+      {
+        "title": "Built to Evolve",
+        "description": "Your needs will change. Our architecture adapts to new features without breaking what already works."
+      },
+      {
+        "title": "Developer-Friendly Setup",
+        "description": "Your future team will thank you. Everything is organized for smooth development, not frustration."
+      }
+    ]
+  },
+  "mission": {
+    "label": "Our Mission",
+    "title": "With our expertise, we've built solutions that scale from prototype to production.",
+    "card": {
+      "title": "Now it's your turn.",
+      "teamName": "Linker Team",
+      "teamRole": "Technical Partners",
+      "cta": "Get Started →",
+      "subtext": "Book your free discovery call"
+    },
+    "imageAlt": "Professional development team collaborating"
+  },
+  "portfolio": {
+    "label": "Portfolio",
+    "title": "Real projects, real impact",
+    "projects": [
+      {
+        "client": "Series B Startup",
+        "title": "FinTech Platform Modernization",
+        "description": "Transformed legacy system into a scalable microservices architecture, reducing infrastructure costs by 40% while handling 10x traffic growth.",
+        "impact": "Supported growth from 50K to 500K users",
+        "tags": ["Backend", "Cloud", "Performance"]
+      },
+      {
+        "client": "Retail Brand",
+        "title": "Mobile-First E-Commerce",
+        "description": "Built responsive shopping experience from scratch with real-time inventory sync and seamless checkout, increasing mobile conversions by 65%.",
+        "impact": "2M+ monthly active users",
+        "tags": ["Frontend", "Mobile", "UX"]
+      },
+      {
+        "client": "Enterprise SaaS",
+        "title": "AI-Powered Analytics Dashboard",
+        "description": "Designed intuitive data visualization platform that makes complex metrics accessible to non-technical teams, reducing reporting time by 80%.",
+        "impact": "Adopted by 200+ organizations",
+        "tags": ["Data", "AI/ML", "Design"]
+      }
+    ]
+  },
+  "reviews": {
+    "label": "Reviews",
+    "title": "Trusted by founders and teams",
+    "testimonials": [
+      {
+        "quote": "They took our vision and turned it into reality faster than we thought possible. The team understood our business goals, not just the tech requirements.",
+        "author": "Sarah Chen",
+        "role": "CEO, Healthcare Tech Startup",
+        "rating": 5
+      },
+      {
+        "quote": "Finally, a technical team that speaks our language. They explained complex decisions in ways our whole team could understand and get behind.",
+        "author": "Marcus Williams",
+        "role": "Product Director, Enterprise SaaS",
+        "rating": 5
+      },
+      {
+        "quote": "Our previous rebuild attempt failed. Linker came in, audited everything, and built it right. We've been running smoothly for 18 months with zero major issues.",
+        "author": "Elena Rodriguez",
+        "role": "Founder, E-Learning Platform",
+        "rating": 5
+      }
+    ]
+  },
+  "contact": {
+    "title": "Let's work together",
+    "description": "Tell us how to reach you, and we'll start the conversation.",
+    "contactMethodLabel": "How should we contact you?",
+    "contactInfoLabel": "Your contact info",
+    "methods": {
+      "email": "Email",
+      "telegram": "Telegram",
+      "whatsapp": "WhatsApp",
+      "other": "Other"
+    },
+    "placeholders": {
+      "email": "your@email.com",
+      "telegram": "@yourusername",
+      "whatsapp": "+1234567890",
+      "other": "How can we reach you?"
+    },
+    "submit": "Get in touch →",
+    "submitting": "Sending...",
+    "toasts": {
+      "infoRequired": {
+        "title": "Contact info required",
+        "description": "Please provide your contact information"
+      },
+      "success": {
+        "title": "Message received!",
+        "description": "We'll get back to you shortly."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "©2024 All Rights Reserved",
+    "tagline": "Powered by Technical Excellence"
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "link": "Return to Home"
+  }
+}
+

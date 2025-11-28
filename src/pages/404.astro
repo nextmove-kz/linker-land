@@ -1,14 +1,30 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import { getTranslations, defaultLocale, type Locale } from '@/lib/i18n';
+
+// Try to detect locale from referrer or default to defaultLocale
+const referer = Astro.request.headers.get('referer');
+let locale: Locale = defaultLocale;
+
+if (referer) {
+  const url = new URL(referer);
+  const pathSegments = url.pathname.split('/').filter(Boolean);
+  if (pathSegments[0] === 'ru' || pathSegments[0] === 'en') {
+    locale = pathSegments[0] as Locale;
+  }
+}
+
+const t = getTranslations(locale);
+const homePath = locale === defaultLocale ? '/' : `/${locale}/`;
 ---
 
 <Layout title="404 - Page Not Found">
   <div class="flex min-h-screen items-center justify-center bg-muted">
     <div class="text-center">
-      <h1 class="mb-4 text-4xl font-bold">404</h1>
-      <p class="mb-4 text-xl text-muted-foreground">Oops! Page not found</p>
-      <a href="/" class="text-primary underline hover:text-primary/90">
-        Return to Home
+      <h1 class="mb-4 text-4xl font-bold">{t.notFound.title}</h1>
+      <p class="mb-4 text-xl text-muted-foreground">{t.notFound.message}</p>
+      <a href={homePath} class="text-primary underline hover:text-primary/90">
+        {t.notFound.link}
       </a>
     </div>
   </div>

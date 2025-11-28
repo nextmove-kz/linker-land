@@ -1,26 +1,33 @@
 ---
 import Contact from "./Contact";
+
+interface Props {
+  translations: typeof import('@/i18n/en.json')['hero'];
+  contactTranslations: typeof import('@/i18n/en.json')['contact'];
+}
+
+const { translations: t, contactTranslations } = Astro.props;
 ---
 
 <section class="pt-32 pb-20 px-1.5 md:px-6">
   <div class="container mx-auto max-w-6xl">
     <div class="space-y-8">
       <h1 class="text-6xl md:text-8xl font-black leading-tight">
-        Technical
+        {t.title.line1}
         <br />
-        <span class="italic font-light">Excellence</span> for
+        <span class="italic font-light">{t.title.line2}</span> {t.title.line3}
         <br />
         <span class="bg-primary text-primary-foreground px-4 inline-block">
-          YOUR IDEAS
+          {t.title.line4}
         </span>
       </h1>
       
       <div class="max-w-2xl space-y-4">
         <p class="text-lg text-foreground">
-          Give your ideas a proper chance to blossom with our world-class
-          technical team,{" "}
+          {t.description.part1}{" "}
+          {t.description.part2}{" "}
           <span class="font-bold">
-            bringing expertise from complex backend systems to seamless user experiences.
+            {t.description.part3}
           </span>
         </p>
       </div>
@@ -28,11 +35,12 @@ import Contact from "./Contact";
       <div class="flex flex-col sm:flex-row gap-4 pt-4">
         <Contact 
           client:load
-          triggerText="Get Started →"
+          triggerText={t.cta.button}
           triggerClassName="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8"
+          translations={contactTranslations}
         />
         <p class="text-sm text-muted-foreground self-center">
-          Book your free discovery call
+          {t.cta.subtext}
         </p>
       </div>
     </div>

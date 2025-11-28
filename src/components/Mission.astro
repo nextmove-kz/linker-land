@@ -1,6 +1,13 @@
 ---
 import Contact from "./Contact";
 import teamImage from "@/assets/team-collaboration.jpg?url";
+
+interface Props {
+  translations: typeof import('@/i18n/en.json')['mission'];
+  contactTranslations: typeof import('@/i18n/en.json')['contact'];
+}
+
+const { translations: t, contactTranslations } = Astro.props;
 ---
 
 <section id="mission" class="py-20 px-1.5 md:px-6 bg-background">
@@ -9,32 +16,33 @@ import teamImage from "@/assets/team-collaboration.jpg?url";
       <!-- Left Column -->
       <div class="space-y-6 pt-8 relative">
         <p class="text-sm font-medium text-muted-foreground uppercase tracking-wide">
-          Our Mission
+          {t.label}
         </p>
         <h2 class="text-4xl md:text-5xl font-bold leading-tight">
-          With our expertise, we've built solutions that scale from prototype to production.
+          {t.title}
         </h2>
 
         <!-- Overlapping Card -->
         <div class="bg-background p-6 md:p-8 rounded-sm shadow-[0_0_0_1px_rgba(0,0,0,0.05),0_0_16px_rgba(0,0,0,0.1)] mt-8 relative md:absolute md:-right-32 md:top-auto md:w-[calc(100%+12rem)] z-10">
           <h3 class="text-2xl md:text-4xl font-light text-muted-foreground italic mb-6">
-            Now it's your turn.
+            {t.card.title}
           </h3>
           
           <div class="space-y-1 mb-6">
-            <p class="text-base font-bold">Linker Team</p>
+            <p class="text-base font-bold">{t.card.teamName}</p>
             <p class="text-xs text-muted-foreground uppercase tracking-wider">
-              Technical Partners
+              {t.card.teamRole}
             </p>
           </div>
 
           <Contact 
             client:load
-            triggerText="Get Started →"
+            triggerText={t.card.cta}
             triggerClassName="bg-primary text-primary-foreground hover:bg-primary/90 w-full md:w-auto"
+            translations={contactTranslations}
           />
           <p class="text-xs text-muted-foreground mt-2">
-            Book your free discovery call
+            {t.card.subtext}
           </p>
         </div>
       </div>
@@ -44,7 +52,7 @@ import teamImage from "@/assets/team-collaboration.jpg?url";
         <div class="aspect-[4/5] bg-muted rounded-sm overflow-hidden">
           <img 
             src={teamImage} 
-            alt="Professional development team collaborating" 
+            alt={t.imageAlt} 
             class="w-full h-full object-cover"
           />
         </div>

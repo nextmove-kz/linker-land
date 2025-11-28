@@ -1,39 +1,24 @@
 ---
-const testimonials = [
-  {
-    quote: "They took our vision and turned it into reality faster than we thought possible. The team understood our business goals, not just the tech requirements.",
-    author: "Sarah Chen",
-    role: "CEO, Healthcare Tech Startup",
-    rating: 5
-  },
-  {
-    quote: "Finally, a technical team that speaks our language. They explained complex decisions in ways our whole team could understand and get behind.",
-    author: "Marcus Williams",
-    role: "Product Director, Enterprise SaaS",
-    rating: 5
-  },
-  {
-    quote: "Our previous rebuild attempt failed. Linker came in, audited everything, and built it right. We've been running smoothly for 18 months with zero major issues.",
-    author: "Elena Rodriguez",
-    role: "Founder, E-Learning Platform",
-    rating: 5
-  }
-];
+interface Props {
+  translations: typeof import('@/i18n/en.json')['reviews'];
+}
+
+const { translations: t } = Astro.props;
 ---
 
 <section id="reviews" class="py-20 px-1.5 md:px-6 bg-background">
   <div class="container mx-auto max-w-6xl">
     <div class="mb-16 text-center">
       <p class="text-sm font-medium text-muted-foreground uppercase tracking-wide mb-4">
-        Reviews
+        {t.label}
       </p>
       <h2 class="text-4xl md:text-5xl font-bold leading-tight">
-        Trusted by founders and teams
+        {t.title}
       </h2>
     </div>
 
     <div class="grid md:grid-cols-3 gap-8">
-      {testimonials.map((testimonial) => (
+      {t.testimonials.map((testimonial) => (
         <div class="bg-muted p-8 rounded-sm">
           <div class="flex gap-1 mb-6">
             {[...Array(testimonial.rating)].map(() => (

@@ -10,22 +10,55 @@ interface ContactProps {
   trigger?: React.ReactNode;
   triggerText?: string;
   triggerClassName?: string;
+  translations?: typeof import('@/i18n/en.json')['contact'];
 }
 
-const Contact = ({ trigger, triggerText, triggerClassName }: ContactProps) => {
+const Contact = ({ trigger, triggerText, triggerClassName, translations }: ContactProps) => {
   const [open, setOpen] = useState(false);
   const [contactMethod, setContactMethod] = useState("email");
   const [contactInfo, setContactInfo] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
+  // Default translations (fallback to English)
+  const t = translations || {
+    title: "Let's work together",
+    description: "Tell us how to reach you, and we'll start the conversation.",
+    contactMethodLabel: "How should we contact you?",
+    contactInfoLabel: "Your contact info",
+    methods: {
+      email: "Email",
+      telegram: "Telegram",
+      whatsapp: "WhatsApp",
+      other: "Other",
+    },
+    placeholders: {
+      email: "your@email.com",
+      telegram: "@yourusername",
+      whatsapp: "+1234567890",
+      other: "How can we reach you?",
+    },
+    submit: "Get in touch →",
+    submitting: "Sending...",
+    toasts: {
+      infoRequired: {
+        title: "Contact info required",
+        description: "Please provide your contact information",
+      },
+      success: {
+        title: "Message received!",
+        description: "We'll get back to you shortly.",
+      },
+    },
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     if (!contactInfo.trim()) {
       toast({
-        title: "Contact info required",
-        description: "Please provide your contact information",
+        title: t.toasts.infoRequired.title,
+        description: t.toasts.infoRequired.description,
         variant: "destructive",
       });
       return;
@@ -39,8 +72,8 @@ const Contact = ({ trigger, triggerText, triggerClassName }: ContactProps) => {
     // Simulate submission
     setTimeout(() => {
       toast({
-        title: "Message received!",
-        description: "We'll get back to you shortly.",
+        title: t.toasts.success.title,
+        description: t.toasts.success.description,
       });
       setContactInfo("");
       setIsSubmitting(false);
@@ -51,21 +84,21 @@ const Contact = ({ trigger, triggerText, triggerClassName }: ContactProps) => {
   const getPlaceholder = () => {
     switch (contactMethod) {
       case "email":
-        return "your@email.com";
+        return t.placeholders.email;
       case "telegram":
-        return "@yourusername";
+        return t.placeholders.telegram;
       case "whatsapp":
-        return "+1234567890";
+        return t.placeholders.whatsapp;
       default:
-        return "How can we reach you?";
+        return t.placeholders.other;
     }
   };
 
   const contactMethods = [
-    { value: "email", label: "Email", icon: Mail },
-    { value: "telegram", label: "Telegram", icon: MessageCircle },
-    { value: "whatsapp", label: "WhatsApp", icon: Phone },
-    { value: "other", label: "Other", icon: MessageCircle },
+    { value: "email", label: t.methods.email, icon: Mail },
+    { value: "telegram", label: t.methods.telegram, icon: MessageCircle },
+    { value: "whatsapp", label: t.methods.whatsapp, icon: Phone },
+    { value: "other", label: t.methods.other, icon: MessageCircle },
   ];
 
   const defaultTrigger = triggerText ? (
@@ -83,16 +116,16 @@ const Contact = ({ trigger, triggerText, triggerClassName }: ContactProps) => {
       )}
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-2xl">Let's work together</DialogTitle>
+          <DialogTitle className="text-2xl">{t.title}</DialogTitle>
           <DialogDescription>
-            Tell us how to reach you, and we'll start the conversation.
+            {t.description}
           </DialogDescription>
         </DialogHeader>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-3">
             <Label className="text-sm font-medium">
-              How should we contact you?
+              {t.contactMethodLabel}
             </Label>
             <div className="grid grid-cols-2 gap-2">
               {contactMethods.map(({ value, label, icon: Icon }) => (
@@ -115,7 +148,7 @@ const Contact = ({ trigger, triggerText, triggerClassName }: ContactProps) => {
 
           <div className="space-y-2">
             <Label htmlFor="contact-info" className="text-sm font-medium">
-              Your contact info
+              {t.contactInfoLabel}
             </Label>
             <Input
               id="contact-info"
@@ -132,7 +165,7 @@ const Contact = ({ trigger, triggerText, triggerClassName }: ContactProps) => {
             className="w-full"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Sending..." : "Get in touch →"}
+            {isSubmitting ? t.submitting : t.submit}
           </Button>
         </form>
       </DialogContent>
